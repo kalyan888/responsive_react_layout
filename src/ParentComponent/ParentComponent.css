@@ -1,0 +1,83 @@
+/* App container */
+.main-container {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.main-container > pre {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* UI screen */
+.ui-screen {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 15px;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+  background-image: linear-gradient(to right, #164a41, #4d774e);
+}
+
+.next-btn {
+  background-color: #eee;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  width: 125px;
+  height: 40px;
+  border-radius: 20px;
+  color: #f1b24a;
+  transition: 0.6s background;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+.next-btn:active {
+  color: white;
+  background: #fff;
+}
+
+.next-btn:hover {
+  color: white;
+  background: #f1b24a;
+  transition: 0.3s background;
+  /* text-shadow: 0 0.1rem #bcb4b4; */
+}
+
+/* Resize handle */
+.resize-handle {
+  width: 10px; /* Adjust the width of the handle as needed */
+  cursor: col-resize; /* Display a resize cursor */
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Preview screen */
+.preview-screen {
+  background-color: #fff;
+  overflow: hidden;
+  margin: 0;
+  padding: 15px;
+}
+/* Preview screen content */
+.preview-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.resizing {
+  background-color: #f1b24a;
+}
+
+/* ___Colors___
+Dark Green: #164A41
+Medium Green: #4D774E
+Light Green: #9DC88D
+Natural Yellow: #F1B24A
+White: #fff */
