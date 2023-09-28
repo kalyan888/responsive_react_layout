@@ -1,14 +1,16 @@
 /* App container */
 .main-container {
   display: flex;
-  align-items: stretch;
   height: 100vh;
 }
 
 .main-container > pre {
   display: flex;
-  flex-wrap: wrap;
   overflow: hidden;
+}
+
+.app-labels {
+  color: #fff;
 }
 
 /* UI screen */
@@ -23,17 +25,18 @@
 }
 
 .next-btn {
-  background-color: #eee;
-  border: none;
   font-size: 18px;
   font-weight: 500;
   width: 125px;
   height: 40px;
-  border-radius: 20px;
   color: #f1b24a;
-  transition: 0.6s background;
-  cursor: pointer;
+  background-color: #eee;
   margin: 10px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.6s background;
 }
 
 .next-btn:active {
@@ -45,13 +48,12 @@
   color: white;
   background: #f1b24a;
   transition: 0.3s background;
-  /* text-shadow: 0 0.1rem #bcb4b4; */
 }
 
 /* Resize handle */
 .resize-handle {
-  width: 10px; /* Adjust the width of the handle as needed */
-  cursor: col-resize; /* Display a resize cursor */
+  width: 10px;
+  cursor: col-resize;
   background-color: #ccc;
   display: flex;
   justify-content: center;
@@ -61,14 +63,32 @@
 /* Preview screen */
 .preview-screen {
   background-color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 15px;
 }
+
 /* Preview screen content */
-.preview-box {
+.preview-screen {
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+.preview-screen::-webkit-scrollbar {
+  width: 9px;
+}
+
+.preview-screen::-webkit-scrollbar-track {
+  background-color: #ced9f3;
+  border-radius: 20px !important;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0 / 30%);
+}
+
+.preview-screen::-webkit-scrollbar-thumb {
+  background-color: #f1b24a;
+  border-radius: 10px !important;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0 / 30%);
 }
 
 .resizing {
@@ -81,3 +101,122 @@ Medium Green: #4D774E
 Light Green: #9DC88D
 Natural Yellow: #F1B24A
 White: #fff */
+
+/* *************  Multi select Styling  *************** */
+
+.vitals-multi-select-div {
+  color: #000;
+}
+
+.vitals-multi-select-div .dropdown-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.multi-select .dropdown-container {
+  border-radius: 6px !important;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px #cccccc80;
+  cursor: pointer;
+}
+
+/* .multi-select .dropdown-heading {
+  height: 26px;
+  padding: 0px 4px;
+  border-radius: 0px;
+  cursor: inherit;
+}
+
+.multi-select .gray {
+  color: #333;
+}
+
+.multi-select .search input {
+  background: #fff;
+  height: 32px;
+  font-size: 12px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.multi-select .search input:focus,
+.multi-select .search input:active {
+  background: #fff;
+  box-shadow: none;
+}
+
+.multi-select .dropdown-search-clear-icon {
+  font-size: 12px !important;
+}
+
+.multi-select .options::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+.multi-select .options::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 7px #00000030;
+  background-color: #7d7d7d;
+}
+
+.multi-select .options::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #00000030;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.multi-select .options li {
+  color: #363843;
+}
+
+.multi-select .select-item.selected {
+  background: #f1f3f5;
+}
+
+.multi-select .item-renderer {
+  align-items: center;
+}
+
+.multi-select .item-renderer input {
+  accent-color: #3f5183;
+  border: none;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.mc-multiselect .item-renderer input:checked:after {
+  background-color: #3f5183;
+  border-color: #3f5183;
+} */
+
+/******   Media queries for Parent Component   ******/
+@media only screen and (max-width: 767px) {
+  .main-container {
+    height: 100%;
+    flex-direction: column;
+  }
+  .resize-handle {
+    display: none;
+  }
+  .ui-screen, .preview-screen{
+    width: 100vw !important;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main-container {
+    height: 100vh;
+    flex-direction: row;
+  }
+  
+  .ui-screen, .preview-screen{
+    width: 100vw;
+    height: 100vh;
+  }
+}

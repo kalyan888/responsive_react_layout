@@ -1,12 +1,13 @@
 import '../../ParentComponent/ParentComponent.css';
+
 function PreviewComponent({ codeSnippet, screenWidth }) {
     return (
-        <pre>
+        // <pre>
         <div className="fluid-container preview-screen" style={{ width: screenWidth }}>
-            Render the code snippet in your UI
+            Render the UI
             {codeSnippet}
         </div>
-        </pre>
+        // </pre>
     );
 }
 
