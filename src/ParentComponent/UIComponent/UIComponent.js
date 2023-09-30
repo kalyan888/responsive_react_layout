@@ -58,7 +58,12 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
 
   return (
     <div className="fluid-container ui-screen" style={{ width: screenWidth }}>
-      <div className="row d-flex align-items-start justify-content-start">
+      <div className="row mt-3">
+        <div className="col-md-12">
+          <h3 className="desc-headers">
+            Render the element with a Name.
+          </h3>
+        </div>
         <div className="col-sm-12 col-md-6">
           <label className="form-label">
             Element Type
@@ -91,7 +96,12 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
           />
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-5">
+        <div className="col-md-12">
+          <h3 className="desc-headers">
+            Make it responsive with basic info.
+          </h3>
+        </div>
         <div className="col-sm-12 col-md-6 vitals-multi-select-div">
           <MultiSelectDropdown
             label="vitalFormMultiSelect"
@@ -102,12 +112,14 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
             disabled={false}
             isSearchReq={true}
             preSelectAll={false}
+            filter={true}
+            filterOptions={multiSelectOptions}
             itemLabel="Q.DESCRIPTION"
             itemValue="Q.CODE"
           />
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-5">
         <div className="h-100 d-flex align-items-center justify-content-center">
           <div>
             <button className="next-btn" onClick={onClickRender}>

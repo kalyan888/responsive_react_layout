@@ -6,7 +6,7 @@ import './ParentComponent.css'
 function ParentComponent() {
     const [codeSnippet, setCodeSnippet] = useState(<></>);
 
-    const [uiWidth, setUiWidth] = useState(600); // Initial width of UI screen
+    const [uiWidth, setUiWidth] = useState(900); // Initial width of UI screen
     const [previewWidth, setPreviewWidth] = useState(window.innerWidth); // Initial width of preview screen
     const [isResizing, setIsResizing] = useState(false);
 
@@ -75,17 +75,3 @@ function ParentComponent() {
 }
 
 export default ParentComponent;
-
-
-{/* Your UI components */ }
-{/* <div className="ui-screen" style={{ width: uiWidth }}>
-<h1>Your UI Components</h1>
-<input type="text" placeholder="Enter text" />
-<button>Submit</button>
-</div> */}
-
-{/* Your preview components */ }
- // <div className="preview-screen" style={{ width: previewWidth }}>
-//     <h1>Preview</h1>
-//     <div className="preview-box">This is your preview content.</div>
-// </div>

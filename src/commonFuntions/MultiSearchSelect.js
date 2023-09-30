@@ -51,10 +51,10 @@ function MultiSelectDropdown(props) {
           selectSomeItems: "Select",
           create: "Create",
         }}
-        filterOptions={(filtOptions, filter) => {
-          if (!filter) {
-            return filtOptions;
-          }
+        filterOptions={(filterOptions, filter) => {
+          // if (!filter) {
+          //   return filtOptions;
+          // }
 
           // return filtOptions.filter(eachItem => (modifyData(eachItem?.label).includes(modifyData(filter))));
         }}
