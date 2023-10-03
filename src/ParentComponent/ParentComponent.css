@@ -22,10 +22,6 @@ Dark Mode Field BG: #3b3b3b */
   color: #fff;
 }
 
-.form-control {
-  border: var(--bs-border-width) solid #9DC88D !important;
-}
-
 /* UI screen */
 .ui-screen {
   font-size: 16px;
@@ -45,10 +41,10 @@ Dark Mode Field BG: #3b3b3b */
 }
 
 .next-btn {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  width: 125px;
-  height: 40px;
+  width: 130px;
+  height: 36px;
   color: #f1b24a;
   background-color: #eee;
   margin: 10px 10px;
@@ -119,52 +115,43 @@ Dark Mode Field BG: #3b3b3b */
 }
 
 /* *************  Multi select Styling  *************** */
-.vitals-multi-select-div {
+.multi-select-div {
   color: #000;
 }
 
-.vitals-multi-select-div .dropdown-container {
+.multi-select-div .dropdown-container {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.multi-select .dropdown-container {
   border-radius: 6px !important;
   border: 1px solid #ccc;
-  /* box-shadow: inset 0 1px 1px #cccccc80; */
-  cursor: pointer;
 }
 
-.multi-select .options::-webkit-scrollbar {
+.multi-select-div .options::-webkit-scrollbar {
   width: 9px;
 }
 
-.multi-select .options::-webkit-scrollbar-thumb {
+.multi-select-div .options::-webkit-scrollbar-thumb {
   background-color: #f1b24a;
   border-radius: 10px !important;
   box-shadow: inset 0 0 7px rgba(0, 0, 0 / 30%);
 }
 
-.multi-select .options::-webkit-scrollbar-track {
+.multi-select-div .options::-webkit-scrollbar-track {
   background-color: #ced9f3;
   border-radius: 20px !important;
   box-shadow: inset 0 0 6px rgba(0, 0, 0 / 30%);
 }
-/* .multi-select .gray {
-  color: #000;
-} */
-
-/* .multi-select .dropdown-heading {
-  height: 26px;
-  padding: 0px 4px;
-  border-radius: 0px;
-  cursor: inherit;
+.multi-select-div .dropdown-heading {
+  font-size: 14px !important;
+}
+.multi-select-div .gray {
+  color: #000 !important;
 }
 
-
-.multi-select .search input {
+/* 
+.multi-select-div .search input {
   background: #fff;
   height: 32px;
   font-size: 12px;
@@ -174,30 +161,25 @@ Dark Mode Field BG: #3b3b3b */
   outline: none;
 }
 
-.multi-select .search input:focus,
-.multi-select .search input:active {
+.multi-select-div .search input:focus,
+.multi-select-div .search input:active {
   background: #fff;
   box-shadow: none;
 }
 
-.multi-select .dropdown-search-clear-icon {
-  font-size: 12px !important;
-}
-
-
-.multi-select .options li {
+.multi-select-div .options li {
   color: #363843;
 }
 
-.multi-select .select-item.selected {
+.multi-select-div .select-item.selected {
   background: #f1f3f5;
 }
 
-.multi-select .item-renderer {
+.multi-select-div .item-renderer {
   align-items: center;
 }
 
-.multi-select .item-renderer input {
+.multi-select-div .item-renderer input {
   accent-color: #3f5183;
   border: none;
   margin-right: 6px;
@@ -232,6 +214,9 @@ Dark Mode Field BG: #3b3b3b */
     width: 100vw !important;
     height: 100%;
   }
+  /* .preview-screen{
+    height: 100vh;
+  } */
 }
 @media only screen and (min-width: 768px) {
   .main-container {

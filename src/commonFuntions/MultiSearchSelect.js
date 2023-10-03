@@ -32,9 +32,7 @@ function MultiSelectDropdown(props) {
 
   return (
     <>
-      <label className="form-label app-labels">
-        Field Basic Attributes
-      </label>
+      <label className="form-label app-labels">Field Basic Attributes</label>
       <MultiSelect
         labelledBy={label}
         options={options}
@@ -52,11 +50,13 @@ function MultiSelectDropdown(props) {
           create: "Create",
         }}
         filterOptions={(filterOptions, filter) => {
-          // if (!filter) {
-          //   return filtOptions;
-          // }
-
-          // return filtOptions.filter(eachItem => (modifyData(eachItem?.label).includes(modifyData(filter))));
+          if (!filter) {
+            return filterOptions;
+          }
+          const userInput = filter.toLowerCase();
+          return filterOptions.filter((option) =>
+            option.label.toLowerCase().includes(userInput)
+          );
         }}
         onChange={updateSelectedOptions}
         className="multi-select"

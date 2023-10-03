@@ -11,7 +11,7 @@ const initialFields = {
   eleStatus: false,
 };
 
-let multiSelectOptions = [
+let attributeOptions = [
   { value: "1", labelName: "Label Class Name" },
   { value: "2", labelName: "Field Class Name" },
   { value: "3", labelName: "Place Holder" },
@@ -22,8 +22,8 @@ let multiSelectOptions = [
 function UIComponent({ handleGenerateClick, screenWidth }) {
   const [uiCompFields, setUICompFields] = useState(initialFields);
   const [fieldsData, setFieldsData] = useState([]);
-
-  const [selectedVitalsForm, setSelectedVitalsForm] = useState([]);
+  
+  const [selectedAttributes, setSelectedAttributes] = useState([]);
 
   useEffect(() => {
     handleGenerateClick(fieldsData);
@@ -57,22 +57,24 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
   const { elementType, labelName, eleStatus } = uiCompFields;
 
   return (
-    <div className="fluid-container ui-screen" style={{ width: screenWidth }}>
+    <section
+      className="fluid-container ui-screen"
+      style={{ width: screenWidth }}
+    >
       <div className="row mt-3">
-        <div className="col-md-12">
-          <h3 className="desc-headers">
-            Render the element with a Name.
-          </h3>
-        </div>
+        <header className="col-md-12">
+          <h3 className="desc-headers">Render the element with a Name.</h3>
+        </header>
         <div className="col-sm-12 col-md-6">
-          <label className="form-label">
+          <label htmlFor="elementType" className="form-label">
             Element Type
           </label>
           <select
+            id="elementType"
             name="elementType"
             value={elementType}
             className="form-select"
-            aria-label="Default select example"
+            aria-label="Element Type"
             onChange={onChangeSelectVal}
           >
             <option value="select">Select Element</option>
@@ -82,40 +84,35 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
           </select>
         </div>
         <div className="col-sm-12 col-md-6">
-          <label className="form-label">
+          <label htmlFor="labelName" className="form-label">
             Label Name
           </label>
           <input
+            id="labelName"
             name="labelName"
             value={labelName}
             type="text"
             className="form-control"
-            // id="basic-url"
             aria-describedby="basic-addon3"
             onChange={onChangeSelectVal}
           />
         </div>
       </div>
       <div className="row mt-5">
-        <div className="col-md-12">
-          <h3 className="desc-headers">
-            Make it responsive with basic info.
-          </h3>
-        </div>
-        <div className="col-sm-12 col-md-6 vitals-multi-select-div">
+        <header className="col-md-12">
+          <h3 className="desc-headers">Make it responsive with basic info.</h3>
+        </header>
+        <div className="col-sm-12 col-md-6 multi-select-div">
           <MultiSelectDropdown
-            label="vitalFormMultiSelect"
-            dropdownOptions={multiSelectOptions}
-            selectedOptions={selectedVitalsForm}
+            label="multiSelect"
+            dropdownOptions={attributeOptions}
+            selectedOptions={selectedAttributes}
             isSelectAllReq={true}
-            updateSelectedOptions={setSelectedVitalsForm}
+            updateSelectedOptions={setSelectedAttributes}
             disabled={false}
             isSearchReq={true}
             preSelectAll={false}
-            filter={true}
-            filterOptions={multiSelectOptions}
-            itemLabel="Q.DESCRIPTION"
-            itemValue="Q.CODE"
+            filterOptions={attributeOptions}
           />
         </div>
       </div>
@@ -134,8 +131,7 @@ function UIComponent({ handleGenerateClick, screenWidth }) {
           </div>
         </div>
       </div>
-      <></>
-    </div>
+    </section>
   );
 }
 
